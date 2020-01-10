@@ -20,4 +20,4 @@ app.use(bodyParser.json())
 app.use('/api', routes)
 app.use(errorHandler)
 
-app.listen(port, () => console.log(`Listening on port ${port}`))
+app.listen(port, () => console.log(`Listening on port ${port} 🥕`))
