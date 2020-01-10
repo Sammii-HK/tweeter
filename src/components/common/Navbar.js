@@ -2,7 +2,6 @@ import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 
 import Auth from '../../lib/Auth'
-import Favorite from '../../lib/Favorite'
 
 class Navbar extends React.Component {
 
@@ -25,7 +24,6 @@ class Navbar extends React.Component {
   logout() {
     Auth.removeToken()
     // clear favorites in local storage on log out
-    Favorite.clearFavorites()
     this.props.history.push('/')
   }
 
@@ -37,8 +35,8 @@ class Navbar extends React.Component {
             {
               /* Navbar branding and burger menu */
             }
-            {Auth.isAuthenticated() && <Link to="/search" className="navbar-item is-size-4">Artistry</Link>}
-            {!Auth.isAuthenticated() && <Link to="/" className="navbar-item is-size-4">Artistry</Link>}
+            {Auth.isAuthenticated() && <Link to="/search" className="navbar-item is-size-4">Tweeter</Link>}
+            {!Auth.isAuthenticated() && <Link to="/" className="navbar-item is-size-4">Tweeter</Link>}
 
             <a role="button" className={`navbar-burger ${this.state.active ? ' is-active' : ''}`} onClick={this.toggleActive}>
               <span aria-hidden="true"></span>
