@@ -15,7 +15,6 @@
     "url": "https://github.com/Sammii-HK/tweeter/issues"
   },
   "homepage": "https://github.com/Sammii-HK/tweeter#readme",
-  ,
   "dependencies": {
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
