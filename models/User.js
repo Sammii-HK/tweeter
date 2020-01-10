@@ -20,6 +20,12 @@ const userSchema = new mongoose.Schema({
     minlength: [6, 'The password should be longer than 6 characters'],
     maxlength: [12, 'The password should be less than 12 characters']
   },
+  location: {
+    type: String,
+    required: [function() {
+      if this.isUser
+    }, 'Please enter your location']
+  },
   date_of_joining: {
     type: Date,
     default: Date.now
