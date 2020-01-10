@@ -26,10 +26,6 @@ const userSchema = new mongoose.Schema({
   lastname: {
     type: String,
   },
-  country: {
-    type: String,
-    enum: countries
-  },
   phone: {
     type: String,
   },
