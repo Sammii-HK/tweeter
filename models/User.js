@@ -20,18 +20,6 @@ const userSchema = new mongoose.Schema({
     minlength: [6, 'The password should be longer than 6 characters'],
     maxlength: [12, 'The password should be less than 12 characters']
   },
-  firstname: {
-    type: String,
-  },
-  lastname: {
-    type: String,
-  },
-  phone: {
-    type: String,
-  },
-  website: {
-    type: String,
-  },
   date_of_joining: {
     type: Date,
     default: Date.now
@@ -41,7 +29,6 @@ const userSchema = new mongoose.Schema({
     virtuals: true, // add virtuals to the JSON
     transform(doc, json) {
       delete json.password // delete the password
-      delete json._locations
       delete json.__v
       return json
     }
