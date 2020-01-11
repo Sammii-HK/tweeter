@@ -7,7 +7,7 @@ import SecureRoute from './components/common/SecureRoute'
 import Home from './components/common/Home'
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
-import Profile from './components/auth/Profile'
+import Profile from './components/user/Profile'
 
 
 

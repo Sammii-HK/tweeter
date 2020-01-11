@@ -28,7 +28,8 @@ const userSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    required: true
+    required: true,
+    default: 'auth'
   },
   date_of_joining: {
     type: Date,
