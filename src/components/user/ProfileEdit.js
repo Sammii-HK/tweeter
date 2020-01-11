@@ -14,6 +14,9 @@ class ProfileEdit extends React.Component {
       data: {},
       errors: {}
     }
+
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   componentDidMount(){
@@ -23,13 +26,17 @@ class ProfileEdit extends React.Component {
     axios.get('/api/me', {
       headers: { 'Authorization': `Bearer ${token}` }
     })
-      .then(res => this.setState({ data: res.data }))
+      .then(res => {
+        const data = { ...res.data, ['status']: 'pending' }
+        this.setState({ data })
+    })
       .catch(err => console.error(err))
   }
 
   handleChange(e) {
     const data = { ...this.state.data, [e.target.name]: e.target.value }
     this.setState({ data })
+    console.log(this.state.data)
   }
 
   handleSubmit(e) {
@@ -52,25 +59,32 @@ class ProfileEdit extends React.Component {
       <section className="section">
         <div className="container">
           <div className="columns is-centered">
-            <div className="column is-half-desktop is-two-thirds-tablet">
+            <div className="column is-12">
               <Link to="/me">
                 <button className="button">Back</button>
               </Link>
             </div>
             <div className="column is-half-desktop is-two-thirds-tablet">
+              <div className="title is-4">Profile</div>
+              <label className="label">Username</label>
+              <div>{this.state.data.username}</div>
+
+              <label className="label">Email</label>
+              <div>{this.state.data.email}</div>
+              <hr />
               <form onSubmit={this.handleSubmit}>
                 <div className="field">
-                  <label className="label">email</label>
+                  <label className="label">Location</label>
                   <div className="control">
                     <input
                       className="input"
                       name="name"
-                      placeholder="eg: Rosé"
+                      placeholder="eg: United Kingdom"
                       onChange={this.handleChange}
-                      value={this.state.data.email || ''}
+                      value={this.state.data.location || ''}
                     />
                   </div>
-                  {this.state.errors.email && <div className="help is-danger">{this.state.errors.email}</div>}
+                  {this.state.errors.location && <div className="help is-danger">{this.state.errors.location}</div>}
                 </div>
 
 
