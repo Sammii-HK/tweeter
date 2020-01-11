@@ -27,8 +27,7 @@ function loginRoute(req, res, next) {
 }
 
 function profileRoute(req, res) {
-  req.currentUser
-    .then(user => res.json(user))
+  res.json(req.currentUser)
 }
 
 module.exports = {

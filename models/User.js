@@ -23,10 +23,13 @@ const userSchema = new mongoose.Schema({
   location: {
     type: String,
     required: [function() {
-      return this.isUser
+      return this.status !== 'pending'
     }, 'Please enter your location']
   },
-  status: 'pending',
+  status: {
+    type: String,
+    required: true
+  },
   date_of_joining: {
     type: Date,
     default: Date.now

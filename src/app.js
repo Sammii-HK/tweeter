@@ -20,8 +20,8 @@ class App extends React.Component{
     return(
       <Router>
         <Switch>
-          <SecureRoute path="/profile" component={Profile} />
-          <Route path="/home" component={Home} />
+          <SecureRoute path="/me" component={Profile} />
+          <SecureRoute path="/home" component={Home} />
           <Route path="/register" component={Register} />
           <Route exact path="/" component={Login} />
         </Switch>

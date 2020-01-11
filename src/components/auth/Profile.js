@@ -39,6 +39,9 @@ class Profile extends React.Component {
                 <Link to="/">
                   <button className="button edit-profile">Back</button>
                 </Link>
+                <Link to="/account-edit">
+                  <button className="button edit-profile">Edit Profile</button>
+                </Link>
 
                 <div className="title is-4">Profile</div>
                 <label className="label">Username</label>
