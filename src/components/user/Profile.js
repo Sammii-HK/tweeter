@@ -48,6 +48,14 @@ class Profile extends React.Component {
                 <div>{this.state.data.email}</div>
                 <hr />
 
+                {this.state.data.location &&
+                  <div className="location">
+                  <label className="label">Location</label>
+                  <div>{this.state.data.location}</div>
+                  <hr />
+                  </div>
+                }
+
               </div>
             </div>
           </div>
