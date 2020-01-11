@@ -30,8 +30,17 @@ function profileRoute(req, res) {
   res.json(req.currentUser)
 }
 
+function updateRoute(req, res, next) {
+  User.findOne({ email: req.currentUser.email })
+    .then(user => user.set(req.body))
+    .then(user => user.save())
+    .then(user => res.json(user))
+    .catch(next)
+}
+
 module.exports = {
   register: registerRoute,
   login: loginRoute,
-  profile: profileRoute
+  profile: profileRoute,
+  update: updateRoute
 }

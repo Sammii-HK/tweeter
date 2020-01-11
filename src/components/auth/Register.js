@@ -32,6 +32,8 @@ class Register extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
+    const data = { ...this.state.data, [status]: 'null' }
+    this.setState({ data })
 
     axios.post('/api/register', this.state.data)
       .then(() => this.props.history.push('/'))

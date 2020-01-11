@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
   location: {
     type: String,
     required: [function() {
-      return this.status !== 'pending'
+      return this.status === 'pending'
     }, 'Please enter your location']
   },
   status: {
