@@ -6,9 +6,14 @@ function profileRoute(req, res) {
 
 function updateRoute(req, res, next) {
   User.findOne({ email: req.currentUser.email })
-    .then(({ password, ...user }) => user)
-    .then(user => user.set(req.body))
-    .then(user => user.save())
+    .then(user => {
+      const { password, username, ...noPassword } = user
+      return user.set({...noPassword, ...req.body})
+    })
+    .then(user => {
+      delete user.password
+      return user.save()
+    })
     .then(user => res.json(user))
     .catch(next)
 }
