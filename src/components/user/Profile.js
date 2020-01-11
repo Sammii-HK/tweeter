@@ -34,13 +34,10 @@ class Profile extends React.Component {
         <Navbar />
         <section className="section">
           <div className="container">
-            <div className="edit-form-wrapper">
+            <div className="columns is-centered">
               <div>
-                <Link to="/">
-                  <button className="button edit-profile">Back</button>
-                </Link>
-                <Link to="/account-edit">
-                  <button className="button edit-profile">Edit Profile</button>
+                <Link to="/me/edit">
+                  <button className="button">Edit Profile</button>
                 </Link>
 
                 <div className="title is-4">Profile</div>

@@ -8,6 +8,7 @@ import Home from './components/common/Home'
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import Profile from './components/user/Profile'
+import ProfileEdit from './components/user/ProfileEdit'
 
 
 
@@ -20,6 +21,7 @@ class App extends React.Component{
     return(
       <Router>
         <Switch>
+          <SecureRoute path="/me/edit" component={ProfileEdit} />
           <SecureRoute path="/me" component={Profile} />
           <SecureRoute path="/home" component={Home} />
           <Route path="/register" component={Register} />

@@ -35,7 +35,7 @@ class Navbar extends React.Component {
             {
               /* Navbar branding and burger menu */
             }
-            {Auth.isAuthenticated() && <Link to="/search" className="navbar-item is-size-4">Tweeter</Link>}
+            {Auth.isAuthenticated() && <Link to="/me" className="navbar-item is-size-4">Tweeter</Link>}
             {!Auth.isAuthenticated() && <Link to="/" className="navbar-item is-size-4">Tweeter</Link>}
 
             <a role="button" className={`navbar-burger ${this.state.active ? ' is-active' : ''}`} onClick={this.toggleActive}>
@@ -53,7 +53,7 @@ class Navbar extends React.Component {
             </div>
             <div className="navbar-end">
               {/* right-hand links */}
-              {Auth.isAuthenticated() && <Link to='/profile' className="navbar-item">Profile</Link>}
+              {Auth.isAuthenticated() && <Link to='/me' className="navbar-item">Profile</Link>}
               {!Auth.isAuthenticated() && <Link to='/register' className="navbar-item">Register</Link>}
               {!Auth.isAuthenticated() && <Link to='/login' className="navbar-item">Log in</Link>}
               {Auth.isAuthenticated() && <Link to='/' className="logout navbar-item" onClick={this.logout}>Logout</Link>}
