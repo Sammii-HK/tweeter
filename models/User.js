@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: 'Please provide a password',
     minlength: [6, 'The password should be longer than 6 characters'],
-    maxlength: [12, 'The password should be less than 12 characters']
+    maxlength: this.status === 'auth' ? [12, 'The password should be less than 12 characters'] : Infinity
   },
   location: {
     type: String,
