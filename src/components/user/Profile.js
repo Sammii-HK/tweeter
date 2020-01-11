@@ -48,8 +48,17 @@ class Profile extends React.Component {
                 <div>{this.state.data.email}</div>
                 <hr />
 
+                {!this.state.data.location &&
+                  <div>
+                  <Link to="/me/edit">
+                    <button className="button">Please complete your profile</button>
+                  </Link>
+                  <hr />
+                  </div>
+                }
+
                 {this.state.data.location &&
-                  <div className="location">
+                  <div>
                   <label className="label">Location</label>
                   <div>{this.state.data.location}</div>
                   <hr />
