@@ -78,7 +78,7 @@ class ProfileEdit extends React.Component {
                   <div className="control">
                     <input
                       className="input"
-                      name="name"
+                      name="location"
                       placeholder="eg: United Kingdom"
                       onChange={this.handleChange}
                       value={this.state.data.location || ''}
